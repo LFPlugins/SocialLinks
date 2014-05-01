@@ -1,0 +1,18 @@
+name: SocialLinks
+main: com.gmail.lfplugins.newReloadCommand.Main
+version: 1.0.0
+description: >
+             SocialLinks 1.0
+commands:
+  website:
+    description: Shows the server's website
+  twitter:
+    description: Shows the server's Twitter
+  youtube:
+    description: Shows the server's YouTube
+  twitch:
+    description: Shows the server's Twitch
+  facebook:
+    description: Shows the server's FaceBook
+  instagram:
+    description: Shows the server's Instagram

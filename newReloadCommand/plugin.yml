@@ -1,6 +1,6 @@
 name: SocialLinks
 main: com.gmail.lfplugins.newReloadCommand.Main
-version: 1.0.0
+version: 1.1
 description: >
              SocialLinks 1.0
 commands:
@@ -16,3 +16,5 @@ commands:
     description: Shows the server's FaceBook
   instagram:
     description: Shows the server's Instagram
+  slreload:
+    description: Reloads Sl

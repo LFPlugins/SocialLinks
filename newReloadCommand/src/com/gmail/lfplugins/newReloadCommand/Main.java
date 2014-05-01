@@ -22,6 +22,7 @@ public class Main extends JavaPlugin {
 		getConfig().addDefault("Links.InstagramAdress", String.valueOf("http://www.instagram.com/yourname"));
 		getConfig().addDefault("Links.TwitchAdress", String.valueOf("http://www.twitch.tv/yourname"));
 		getConfig().addDefault("Links.YouTubeAdress", String.valueOf("http://www.youtube.com/yourname"));
+		getConfig().addDefault("ReloadMsg", String.valueOf("Reloaded."));
 		getConfig().options().copyDefaults(true);
 		saveConfig();
 		pm.addPermission(new Permissions().Website);
@@ -111,11 +112,15 @@ public class Main extends JavaPlugin {
 			}
 		} else if (commandLabel.equalsIgnoreCase("SLReload")) {
 				if (player.hasPermission(new Permissions().Reload)) {
+					PluginManager pm = getServer().getPluginManager();
 					reloadConfig();
 					saveConfig();
+					pm.disablePlugin(this);
+					pm.enablePlugin(this);
 					sender.sendMessage(ChatColor.AQUA
 							+ getConfig().getString("SocialLinks.Prefix") + " " +  ChatColor.GREEN
 							+ getConfig().getString("ReloadMsg"));
+					
 				}else{
 					sender.sendMessage(ChatColor.AQUA + getConfig().getString("SocialLinks.Prefix") + ChatColor.RED + " " + getConfig().getString("SocialLinks.NoPermMsg"));
 				}
